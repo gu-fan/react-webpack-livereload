@@ -19,7 +19,7 @@ Usage
 
    .. code:: sh 
 
-       cd react-web
+       cd react-webpack-livereload
        npm install
 
 3. Start Server

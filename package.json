@@ -1,5 +1,5 @@
 {
-  "name": "react-test",
+  "name": "react-webpack-livereload",
   "version": "1.0.0",
   "main": "webpack.config.js",
   "dependencies": {
