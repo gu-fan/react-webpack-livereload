@@ -4,6 +4,11 @@ Intro
 A React_ barebone app with Webpack_ && Gulp_ Livereload for you.
 
 
+material-ui, react-router, and a simple store is included for your app.
+
+also scss is included.
+
+
 Usage
 ------
 

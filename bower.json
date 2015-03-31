@@ -1,0 +1,21 @@
+{
+  "name": "web-live",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Rykka/react-webpack-livereload",
+  "authors": [
+    "rykka <rykka10@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-material-design": "~0.3.0",
+    "jquery": "~2.1.0",
+    "dropdown.js": "*"
+  }
+}
