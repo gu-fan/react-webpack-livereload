@@ -2,7 +2,9 @@ var gulp = require('gulp')
 
 var $ = require('gulp-load-plugins')();
 
-var webpack = require('gulp-webpack');
+var webpack = require('gulp-webpack'),
+    less = require('gulp-less'),
+    sourcemaps = require('gulp-sourcemaps');
 
 var webpack_config  = require('./webpack.config')
 
@@ -66,6 +68,14 @@ gulp.task("sass", function() {
         .pipe(gulp.dest('dist/css'));
 });
 
+gulp.task('less', function() {
+  return gulp.src('./src/less/**/*.less')
+    .pipe(sourcemaps.init())
+    .pipe(less())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist/css'));
+});
+
 gulp.task("webpack", function() {
     return gulp.src('./src/js/app.js')
         .pipe(webpack(webpack_config))
@@ -77,9 +87,10 @@ gulp.task('bower', function() {
         .pipe(gulp.dest('dist/vendor/'));
 });
 
-gulp.task('watch', ['webpack', 'sass', 'html', 'serve'], function(){
+gulp.task('watch', ['webpack', 'less', 'html', 'serve'], function(){
     gulp.watch('./src/js/**/*.js', ['webpack']);
-    gulp.watch('./src/scss/**/*.scss', ['sass']);
+    // gulp.watch('./src/scss#<{(||)}>#*.scss', ['sass']);
+    gulp.watch('./src/less/**/*.less', ['less']);
     gulp.watch('./src/index.html', ['html']);
 });
 
